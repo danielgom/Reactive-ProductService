@@ -19,6 +19,7 @@ jobs:
           java-version: '17'
           distribution: temurin
       - name: Publish package
-        run: gradle publish
+        run: |
+          git --no-pager log -1 --name-only -p
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
