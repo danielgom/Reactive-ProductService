@@ -28,6 +28,5 @@ jobs:
             echo "$file was modified"
           done
           git --no-pager log -1 --name-only -p
-          git branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
