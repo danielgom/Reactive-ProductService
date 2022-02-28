@@ -21,12 +21,11 @@ jobs:
         with:
           java-version: '17'
           distribution: temurin
-      - uses: tj-actions/changed-files@v11.9
+      - uses: tj-actions/changed-files@v17.2
       - name: Publish package
         run: |
           for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
             echo "$file was modified"
           done
-          git --no-pager log -1 --name-only -p
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
