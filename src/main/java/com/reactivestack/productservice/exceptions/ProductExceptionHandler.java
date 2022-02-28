@@ -29,5 +29,4 @@ public class ProductExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(badRequestError);
     }
-
 }
