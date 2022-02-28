@@ -16,4 +16,5 @@ public interface ProductRepository extends ReactiveMongoRepository<Product, Stri
 
     @Query(value = "{'price' : {$gte : ?0, $lte : ?1}}" )
     Flux<Product> findAllByPriceBetweenQuery(Double lowerBoundary, Double higherBoundary);
+
 }
