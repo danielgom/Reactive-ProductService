@@ -3,7 +3,7 @@ name: Build
 on:
   pull_request:
     types: [opened, synchronize]
-    branches: [master, qa]
+    branches: [master, qa, another]
 
 jobs:
   build:
