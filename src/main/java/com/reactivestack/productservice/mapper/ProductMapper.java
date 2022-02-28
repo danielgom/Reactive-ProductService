@@ -16,4 +16,5 @@ public interface ProductMapper {
 
     @InheritInverseConfiguration
     Product toEntity(ProductDto productDto);
+
 }
