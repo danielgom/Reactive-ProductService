@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - newbranch
 
 jobs:
   build:
@@ -14,15 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          fetch-depth: 2  # OR "2" -> To retrieve the preceding commit.
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '17'
           distribution: temurin
+      - uses: tj-actions/changed-files@v17.2
       - name: Publish package
         run: |
-          git --no-pager log -1 --name-only -p
-          git branch
+          for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
+            echo "$file was modified"
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
