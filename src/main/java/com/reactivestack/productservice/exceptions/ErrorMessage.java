@@ -14,4 +14,5 @@ public class ErrorMessage {
 
     private HttpStatus httpStatus;
     private String details;
+
 }
