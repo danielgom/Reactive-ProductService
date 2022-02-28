@@ -1,11 +1,9 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - master
-      - newbranch
-      - qa
+  pull_request:
+    types: [opened, synchronize]
+    branches: [master, qa]
 
 jobs:
   build:
