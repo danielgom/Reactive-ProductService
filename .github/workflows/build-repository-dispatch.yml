@@ -14,7 +14,7 @@ jobs:
         run: |
           number_of_services=${{ github.event.client_payload.number_of_services }}
           for (( i=0; i<${number_of_services}; i++ )); do
-            echo ${{ github.event.client_payload.services[${i}] }}
+            echo ${{ github.event.client_payload.services["${i}"] }}
           done
           
           echo ${{ github.event.client_payload.env }}
