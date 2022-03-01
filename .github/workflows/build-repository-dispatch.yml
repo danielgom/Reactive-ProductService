@@ -14,7 +14,7 @@ jobs:
         run: |
           sasa=${{ github.event.client_payload.services }}
           echo $#sasa[*]
-          for service in "${{ github.event.client_payload.services[*] }}"; do
+          for service in "${{ github.event.client_payload.services[1] }}"; do
             echo $service
           done
           
