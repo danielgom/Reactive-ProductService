@@ -18,4 +18,4 @@ jobs:
         env:
           SERVICE: ${{ matrix.service }}
         run: |
-          echo "./gradlew :${env.SERVICE}:build"
+          echo "./gradlew :${{ env.SERVICE }}:build"
