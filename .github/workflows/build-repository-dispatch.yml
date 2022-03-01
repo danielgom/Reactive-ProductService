@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: get payload
         run: |
-          for service in ${{ github.event.client_payload.services }}; do
+          for service in $github.event.client_payload.services; do
             echo $service
           done
           echo "hello there"
