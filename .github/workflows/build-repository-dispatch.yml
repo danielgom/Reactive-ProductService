@@ -13,7 +13,7 @@ jobs:
       - name: get payload
         run: |
           sasa=${{ github.event.client_payload.services }}
-          echo ${#sasa[*]}
+          echo ${#sasa[@]}
           for service in "${{ github.event.client_payload.services[1] }}"; do
             echo $service
           done
