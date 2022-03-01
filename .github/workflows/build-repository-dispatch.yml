@@ -8,12 +8,13 @@ jobs:
   get-all-payload:
     name: Get all the payload
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        service: ${{ github.event.client_payload.services }}
     steps:
       - uses: actions/checkout@v2
       - name: get payload
         env:
-          SERVICES: ${{ github.event.client_payload.services }}
+          SERVICE: ${{ matrix.service }}
         run: |
-          echo $SERVICES
-          
-          echo ${{ github.event.client_payload.env }}
+          echo $SERVICE
