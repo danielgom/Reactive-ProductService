@@ -1,0 +1,16 @@
+name: Run job
+
+on:
+  repository_dispatch:
+    types: selective-build-and-deploy
+
+jobs:
+  get-all-payload:
+    name: Get all the payload
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: get payload
+        run: |
+          echo ${{ github.event.client_payload }}
+          echo "hello there"
