@@ -16,7 +16,7 @@ jobs:
           #  echo $service
           #done
           
-          services=join(github.event.client_payload.services, ',')
+          services=join($github.event.client_payload.services, ',')
           echo $services
           
           echo ${{ github.event.client_payload.env }}
