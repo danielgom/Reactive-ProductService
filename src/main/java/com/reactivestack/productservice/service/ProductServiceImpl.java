@@ -37,7 +37,6 @@ public class ProductServiceImpl implements ProductService {
         return this.productRepository.findByNameOrId(name, id)
                 .switchIfEmpty(Mono.error(() -> {
                     if (!StringUtils.hasText(name)) {
-
                         return new NotFoundException(String.format("product with id %s not found", id));
                     }
                     return new NotFoundException(String.format("product with name %s not found", name));
@@ -77,4 +76,5 @@ public class ProductServiceImpl implements ProductService {
     public Mono<Void> deleteProductById(String id) {
         return this.productRepository.deleteById(id);
     }
+
 }
