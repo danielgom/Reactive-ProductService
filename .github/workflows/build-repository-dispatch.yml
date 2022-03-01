@@ -8,16 +8,36 @@ jobs:
   get-all-payload:
     name: Get all the payload
     runs-on: ubuntu-20.04
+    outputs:
+      branch-ref: ${{ steps.payload.outputs.branch-ref }}
+      app_name: ${{ steps.payload.outputs.app_name }}
     strategy:
       matrix:
         service: ${{ github.event.client_payload.services }}
+    env:
+      SERVICE: ${{ matrix.service }}
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.branch }}
       - name: get payload
+        id: payload
         if: github.event.client_payload.env == 'dev'
-        env:
-          SERVICE: ${{ matrix.service }}
         run: |
           echo "./gradlew :${{ env.SERVICE }}:build"
+          echo "::set-output name=branch-ref::${{ github.event.client_payload.branch }}"
+          echo "::set-output name=app_name::${{ env.SERVICE }}"
+
+  test-next-step:
+    name: get-something
+    runs-on: ubuntu-20.04
+    needs: get-all-payload
+    env:
+      APP_NAME: ${{ needs.get-all-payload.outputs.app_name }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ needs.get-all-payload.outputs.branch-ref }}
+      - name: do something
+        run: |
+          ls -la
