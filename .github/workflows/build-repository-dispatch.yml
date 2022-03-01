@@ -12,10 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: get payload
         run: |
-          sasa=${#github.event.client_payload.services[@]}
-          echo ${sasa}
-          for service in "${{ github.event.client_payload.services[1] }}"; do
-            echo $service
+          number_of_services=${{ github.event.client_payload.number_of_services }}
+          for (( i=0; i<number_of_services; i++ )); do
+            echo ${{ github.event.client_payload.services[$1] }}
           done
           
           echo ${{ github.event.client_payload.env }}
