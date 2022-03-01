@@ -13,6 +13,8 @@ jobs:
         service: ${{ github.event.client_payload.services }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.branch }}
       - name: get payload
         if: github.event.client_payload.env == 'dev'
         env:
