@@ -49,7 +49,7 @@ dependencies {
 	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-webflux-ui', version: '1.5.11'
-	implementation group: 'org.springdoc', name: 'springdoc-openapi-webflux-core', version: '1.5.11'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-webflux-core', version: '1.6.8'
 }
 
 test {
