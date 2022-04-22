@@ -40,7 +40,7 @@ publishing {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive:2.6.7'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux:2.5.5'
 	compileOnly 'org.projectlombok:lombok:1.18.22'
 	annotationProcessor 'org.projectlombok:lombok:1.18.22'
