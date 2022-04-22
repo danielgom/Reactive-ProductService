@@ -45,7 +45,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.24'
 	annotationProcessor 'org.projectlombok:lombok:1.18.22'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
-	testImplementation 'io.projectreactor:reactor-test:3.4.11'
+	testImplementation 'io.projectreactor:reactor-test:3.4.17'
 	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-webflux-ui', version: '1.5.11'
