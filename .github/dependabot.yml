@@ -17,6 +17,8 @@ updates:
       - gradle_github
     schedule:
       interval: "daily"
+    allow:
+      - dependency-name: "com.grad:intoll"
 
   - package-ecosystem: "github-actions"
     directory: "/"
