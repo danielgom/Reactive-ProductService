@@ -4,9 +4,16 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
+registries:
+  gradle_github:
+      type: maven-repository
+      url: https://maven.pkg.github.com/danielgom/local.th
+      token: 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
 updates:
   - package-ecosystem: "gradle" # See documentation for possible values
     directory: "/" # Location of package manifests
+    registries:
+      - gradle_github
     schedule:
       interval: "daily"
 

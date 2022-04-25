@@ -74,6 +74,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Mono<Void> deleteProductById(String id) {
+        System.out.println();
         return this.productRepository.deleteById(id);
     }
 
