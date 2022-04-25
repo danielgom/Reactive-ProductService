@@ -7,7 +7,7 @@ version: 2
 registries:
   gradle_github:
       type: maven-repository
-      url: https://maven.pkg.github.com/danielgom/testgradledep
+      url: https://maven.pkg.github.com
       username: danielgom
       password: ${{secrets.MY_ARTIFACTORY_PASSWORD}}
 updates:
