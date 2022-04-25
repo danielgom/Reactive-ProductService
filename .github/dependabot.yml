@@ -7,8 +7,9 @@ version: 2
 registries:
   gradle_github:
       type: maven-repository
-      url: https://maven.pkg.github.com/danielgom/local.th
-      token: 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
+      url: https://maven.pkg.github.com/danielgom/testgradledep
+      username: danielgom
+      password: ${{secrets.MY_ARTIFACTORY_PASSWORD}}
 updates:
   - package-ecosystem: "gradle" # See documentation for possible values
     directory: "/" # Location of package manifests
