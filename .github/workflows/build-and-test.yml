@@ -22,7 +22,7 @@ jobs:
         with:
           java-version: '17'
           distribution: temurin
-      - uses: tj-actions/changed-files@v18.7
+      - uses: tj-actions/changed-files@v28
       - name: Publish package
         run: |
           for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
