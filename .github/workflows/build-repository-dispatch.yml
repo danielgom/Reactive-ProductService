@@ -17,7 +17,7 @@ jobs:
     env:
       SERVICE: ${{ matrix.service }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.client_payload.branch }}
       - name: get payload
@@ -35,7 +35,7 @@ jobs:
     env:
       APP_NAME: ${{ needs.get-all-payload.outputs.app_name }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ needs.get-all-payload.outputs.branch-ref }}
       - name: do something
